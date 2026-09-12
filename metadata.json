@@ -1,0 +1,6 @@
+{
+  "name": "METELE APPS",
+  "description": "Landing page móvil exclusiva y catálogo completo de mini apps para negocios reales.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
