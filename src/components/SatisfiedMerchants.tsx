@@ -20,44 +20,44 @@ const SATISFIED_MERCHANTS: MerchantReview[] = [
     id: 'restaurante',
     name: 'Carlos & Sofía Gómez',
     business: 'Parrilla & Empanadas La Criolla',
-    location: 'Miami, FL 🇺🇸',
-    badge: 'Sin 30% de DoorDash',
+    location: 'Córdoba, Córdoba',
+    badge: 'Sin 30% de comisiones',
     metric: '+62% Pedidos Directos',
     image: '/assets/merchant_restaurant_owner_1790074843510.jpg',
-    highlight: 'Los clientes piden directo desde Instagram y pagan por Zelle sin comisiones.',
+    highlight: 'Los clientes piden directo desde Instagram o WhatsApp y pagan al instante sin comisiones abusivas.',
     ecommerceType: 'Gastronomía & Delivery'
   },
   {
     id: 'bodega',
     name: 'Mariano Silva',
-    business: 'Mercado Latino & Bodega',
-    location: 'Orlando, FL 🇺🇸',
-    badge: 'Envíos en todo EE.UU.',
-    metric: 'Ventas 24/7 en USD',
+    business: 'Mercado & Almacén de Barrio',
+    location: 'Paso de los Libres, Corrientes',
+    badge: 'Catálogo con Precios al Día',
+    metric: 'Ventas 24/7 en el Celular',
     image: '/assets/merchant_grocery_owner_1790074855731.jpg',
-    highlight: 'Vendemos yerba, dulces y carnes argentinas a familias latinas de todo USA.',
+    highlight: 'Cargamos nuestras ofertas y los clientes hacen su pedido completo sin mandar audios ni esperar.',
     ecommerceType: 'Supermercado & Envíos'
   },
   {
     id: 'pasteleria',
     name: 'Valeria & Lucas Rojas',
     business: 'Pastelería & Repostería del Sur',
-    location: 'Houston, TX 🇺🇸',
-    badge: 'Seña por Zelle Instantánea',
+    location: 'Mendoza, Mendoza',
+    badge: 'Seña y Reserva Instantánea',
     metric: '100% Agenda Completa',
     image: '/assets/merchant_bakery_owner_1790074869146.jpg',
-    highlight: 'Pedidos de tortas para eventos con fecha y seña lista sin audios eternos.',
+    highlight: 'Pedidos de tortas para eventos con fecha y seña lista sin audios eternos ni confusiones.',
     ecommerceType: 'Tortas & Eventos'
   },
   {
     id: 'barberia',
     name: 'Mateo Mendoza',
-    business: 'Latino Barber Studio Miami',
-    location: 'Miami, FL 🇺🇸',
-    badge: 'Turnos 24/7 en Español',
+    business: 'Barber Studio & Salón',
+    location: 'Rosario, Santa Fe',
+    badge: 'Turnos 24/7 Automatizados',
     metric: 'Cero Huecos Vacíos',
     image: '/assets/merchant_barber_owner_1790074882214.jpg',
-    highlight: 'Los clientes eligen su horario y profesional en 2 toques desde el celular.',
+    highlight: 'Los clientes eligen su horario y profesional en 2 toques desde el celular a cualquier hora.',
     ecommerceType: 'Barber Shop & Salón'
   }
 ];
@@ -78,7 +78,7 @@ export const SatisfiedMerchants: React.FC = () => {
         <div className="text-center mb-6">
           <div className="inline-flex items-center gap-1.5 bg-lime-500/10 border border-lime-400/40 px-3 py-1 rounded-full text-lime-400 text-xs font-black tracking-wider uppercase font-heading mb-2">
             <Sparkles className="w-3.5 h-3.5 text-lime-400 animate-pulse" />
-            <span>RESULTADOS REALES EN USA</span>
+            <span>RESULTADOS REALES & CASOS DE ÉXITO</span>
           </div>
 
           <h2 className="font-heading font-black text-2xl sm:text-3xl text-white tracking-wide uppercase leading-tight">
@@ -91,7 +91,7 @@ export const SatisfiedMerchants: React.FC = () => {
                 <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
               ))}
             </div>
-            <span className="text-xs font-bold text-gray-200">5.0 / 5.0 en Estados Unidos</span>
+            <span className="text-xs font-bold text-gray-200">5.0 / 5.0 Calificación Promedio</span>
           </div>
         </div>
 
@@ -158,7 +158,7 @@ export const SatisfiedMerchants: React.FC = () => {
                 {/* Action CTA Button strictly requested by user */}
                 <div className="mt-3">
                   <a
-                    href={createWhatsAppUrl(`¡Hola! 🔥 Vi el testimonio de ${merchant.name} (${merchant.business}) y quiero mi Mini App con la Promoción activa para mi comercio en USA.`)}
+                    href={createWhatsAppUrl(`¡Hola! 🔥 Vi el testimonio de ${merchant.name} (${merchant.business}) y quiero mi Mini App con la Promoción activa para mi comercio.`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => audioEngine.playSuccess()}
@@ -179,7 +179,7 @@ export const SatisfiedMerchants: React.FC = () => {
         {/* Global Bottom Section CTA */}
         <div className="mt-6 text-center">
           <a
-            href={createWhatsAppUrl("¡Hola! 🔥 Quiero la Promoción especial para tener mi Mini App Ecommerce en Estados Unidos hoy mismo.")}
+            href={createWhatsAppUrl("¡Hola! 🔥 Quiero la Promoción especial para tener mi Mini App Ecommerce para mi negocio hoy mismo.")}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => audioEngine.playTap()}
@@ -213,11 +213,11 @@ export const SatisfiedMerchants: React.FC = () => {
             />
             <div className="p-3 text-center">
               <span className="text-xs font-bold text-lime-400 font-heading">
-                Comercio Sudamericano Verificado en EE.UU. 🇺🇸
+                Comercio Verificado con Mini App Activa
               </span>
               <div className="mt-2">
                 <a
-                  href={createWhatsAppUrl("¡Hola! 🔥 Quiero mi Mini App para mi negocio en Estados Unidos con la Promoción activa.")}
+                  href={createWhatsAppUrl("¡Hola! 🔥 Quiero mi Mini App para mi negocio con la Promoción activa.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] text-black font-heading font-black text-xs py-2 rounded-xl"

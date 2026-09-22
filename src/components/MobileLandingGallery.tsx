@@ -18,99 +18,99 @@ interface MockupExample {
 const MOCKUP_EXAMPLES: MockupExample[] = [
   {
     id: 'supermercado',
-    title: 'Supermercado & Bodega Sudamericana',
-    category: 'Yerba, Carnes, Dulces, Quesos & Abarrotes',
-    badge: 'MERCADO LATINO USA',
+    title: 'Supermercado & Almacén de Barrio',
+    category: 'Yerba, Carnes, Bebidas, Lácteos & Abarrotes',
+    badge: 'ALMACÉN & MERCADO',
     image: '/assets/latino_market_usa_1790051250825.jpg',
-    flag: '🇺🇸🇦🇷🇨🇴🇻🇪',
-    tagline: 'Venta online de productos sudamericanos en EE.UU.',
+    flag: '🛒🥩🧀',
+    tagline: 'Venta online de productos con catálogo y carrito directo',
     visualChips: [
-      { label: 'Cobros con Zelle & Tarjetas', icon: '💵' },
-      { label: 'Envíos locales y todo USA', icon: '📦' },
-      { label: 'Precios actualizados en USD', icon: '💲' },
+      { label: 'Cobros online y efectivo', icon: '💵' },
+      { label: 'Envíos locales y delivery', icon: '📦' },
+      { label: 'Precios actualizados al día', icon: '💲' },
       { label: 'Sin comisiones abusivas', icon: '⚡' }
     ],
-    whatsappPrompt: '¡Hola METELE APPS! 🔥 Tengo un supermercado/bodega sudamericana en EE.UU. y quiero mi tienda online móvil.'
+    whatsappPrompt: '¡Hola METELE APPS! 🔥 Tengo un supermercado/almacén y quiero mi tienda online móvil.'
   },
   {
     id: 'restaurante',
-    title: 'Restaurante, Parrilla & Delivery',
-    category: 'Empanadas, Asados, Ceviche & Comida Casera',
-    badge: 'GASTRONOMÍA LATINA',
+    title: 'Restaurante, Parrilla & Rotisería',
+    category: 'Empanadas, Asados, Pizzas & Comida Casera',
+    badge: 'GASTRONOMÍA & DELIVERY',
     image: '/assets/south_american_food_usa_1790051262235.jpg',
-    flag: '🇺🇸🥩🥟',
-    tagline: 'Pedidos directos sin pagar 30% a DoorDash ni UberEats',
+    flag: '🍽️🥩🥟',
+    tagline: 'Pedidos directos sin pagar 30% a apps intermediarias',
     visualChips: [
       { label: '$0 Comisiones por plato', icon: '🚫' },
-      { label: 'Take-out y Delivery con mapa', icon: '🛵' },
-      { label: 'Pagos Apple Pay & Zelle', icon: '💳' },
+      { label: 'Take-away y Delivery ágil', icon: '🛵' },
+      { label: 'Pagos con transferencias y tarjetas', icon: '💳' },
       { label: 'Pedido directo a WhatsApp y cocina', icon: '💬' }
     ],
-    whatsappPrompt: '¡Hola METELE APPS! 🔥 Tengo un restaurante/delivery sudamericano en USA y quiero vender directo sin pagar el 30% a apps.'
+    whatsappPrompt: '¡Hola METELE APPS! 🔥 Tengo un restaurante/delivery y quiero vender directo sin pagar el 30% a apps.'
   },
   {
     id: 'moda',
-    title: 'Boutique de Ropa & Moda Latina',
-    category: 'Streetwear, Camisetas, Calzado & Accesorios',
-    badge: 'TIENDA DE MODA USA',
+    title: 'Boutique de Ropa & Calzado',
+    category: 'Indumentaria, Camisetas, Accesorios & Moda',
+    badge: 'TIENDA DE MODA',
     image: '/assets/latino_apparel_usa_1790051272608.jpg',
-    flag: '🇺🇸👕👟',
-    tagline: 'Catálogo de alta velocidad para vender por Instagram & TikTok',
+    flag: '👗👕👟',
+    tagline: 'Catálogo de alta velocidad para vender por Instagram & redes',
     visualChips: [
       { label: 'Filtro por talle y color', icon: '🎨' },
-      { label: 'Envíos por USPS / UPS en USA', icon: '🚚' },
+      { label: 'Envíos por correo o retiro', icon: '🚚' },
       { label: 'Checkout rápido a WhatsApp', icon: '🛍️' },
       { label: 'Galería HD para celular', icon: '📸' }
     ],
-    whatsappPrompt: '¡Hola METELE APPS! 🔥 Quiero una tienda móvil para vender indumentaria/calzado latino en Estados Unidos.'
+    whatsappPrompt: '¡Hola METELE APPS! 🔥 Quiero una tienda móvil para vender indumentaria y calzado.'
   },
   {
     id: 'panaderia',
-    title: 'Panadería, Facturas & Tortas',
-    category: 'Medialunas, Pan Dulce & Tortas para Cumpleaños',
-    badge: 'BAKERY LATINA',
+    title: 'Panadería, Confitería & Tortas',
+    category: 'Facturas, Medialunas & Tortas para Eventos',
+    badge: 'PANADERÍA & PASTELERÍA',
     image: '/assets/latino_bakery_usa_1790051284304.jpg',
-    flag: '🇺🇸🥐🍰',
-    tagline: 'Pedidos con fecha de entrega anticipada para la comunidad latina',
+    flag: '🥐🍰🧁',
+    tagline: 'Pedidos programados con fecha de entrega anticipada',
     visualChips: [
-      { label: 'Calendario de entrega / pickup', icon: '📅' },
-      { label: 'Seña inmediata por Zelle', icon: '💰' },
+      { label: 'Calendario de entrega / retiro', icon: '📅' },
+      { label: 'Seña inmediata asegurada', icon: '💰' },
       { label: 'Tortas y catering personalizado', icon: '🎉' },
       { label: 'Catálogo tentador en celular', icon: '🍰' }
     ],
-    whatsappPrompt: '¡Hola METELE APPS! 🔥 Tengo una panadería/pastelería latina en USA y quiero recibir pedidos organizados por celular.'
+    whatsappPrompt: '¡Hola METELE APPS! 🔥 Tengo una panadería/pastelería y quiero recibir pedidos organizados por celular.'
   },
   {
     id: 'barberia',
-    title: 'Barber Shop & Salón Latino',
+    title: 'Barber Shop & Salón de Belleza',
     category: 'Cortes, Barba, Alisados, Estética & Uñas',
-    badge: 'AGENDA 24/7 USA',
+    badge: 'AGENDA 24/7',
     image: '/assets/mobile_barber.jpg',
-    flag: '🇺🇸💈✂️',
-    tagline: 'Turnos automatizados en español para clientes hispanos',
+    flag: '💈✂️💇',
+    tagline: 'Turnos automatizados para que tu agenda esté siempre llena',
     visualChips: [
       { label: 'El cliente elige día y hora solo', icon: '⏰' },
       { label: 'Recordatorios para evitar faltas', icon: '🔔' },
       { label: 'Fotos de cortes y servicios', icon: '💇' },
       { label: 'Agenda multi-profesionales', icon: '👥' }
     ],
-    whatsappPrompt: '¡Hola METELE APPS! 🔥 Quiero una mini app con Reserva de Turnos 24/7 para mi barbería/salón en EE.UU.'
+    whatsappPrompt: '¡Hola METELE APPS! 🔥 Quiero una mini app con Reserva de Turnos 24/7 para mi barbería/salón.'
   },
   {
     id: 'paqueteria',
-    title: 'Envíos & Encomiendas a Sudamérica',
-    category: 'Cargas Aéreas, Marítimas & Paquetería Puerta a Puerta',
-    badge: 'LOGÍSTICA USA-LATAM',
+    title: 'Logística, Fletes & Envíos',
+    category: 'Transporte, Paquetería & Encomiendas',
+    badge: 'LOGÍSTICA & FLETES',
     image: '/assets/mobile_store.jpg',
-    flag: '🇺🇸📦✈️',
-    tagline: 'Cotizador instantáneo de envíos hacia Argentina, Colombia, etc.',
+    flag: '📦🚚📍',
+    tagline: 'Cotizador instantáneo de tarifas y envíos a domicilio',
     visualChips: [
-      { label: 'Calculadora de libras y cajas', icon: '⚖️' },
-      { label: 'Tracking por WhatsApp directo', icon: '📍' },
+      { label: 'Calculadora de bultos y distancia', icon: '⚖️' },
+      { label: 'Contacto directo por WhatsApp', icon: '📍' },
       { label: 'Formulario de retiro a domicilio', icon: '📋' },
-      { label: 'Atención 100% en español', icon: '💬' }
+      { label: 'Atención personalizada inmediata', icon: '💬' }
     ],
-    whatsappPrompt: '¡Hola METELE APPS! 🔥 Tengo una empresa de envíos/paquetería a Sudamérica desde USA y quiero un cotizador móvil.'
+    whatsappPrompt: '¡Hola METELE APPS! 🔥 Tengo un servicio de logística/fletes y quiero un cotizador móvil.'
   }
 ];
 
@@ -125,16 +125,16 @@ export const MobileLandingGallery: React.FC = () => {
         {/* Section Header - Highly Visual */}
         <div className="text-center mb-4">
           <div className="inline-flex items-center gap-1.5 bg-lime-500/10 border border-lime-400/40 px-3 py-1 rounded-full text-lime-400 text-xs font-bold font-heading mb-1.5 shadow-sm">
-            <span className="text-sm">🇺🇸</span>
+            <Sparkles className="w-3.5 h-3.5 text-lime-400" />
             <span>ECOMMERCES REALES EN CELULAR</span>
           </div>
 
           <h2 className="font-heading font-black text-xl sm:text-2xl text-white tracking-wide uppercase leading-tight">
-            TU COMERCIO EN <span className="text-[#10E836]">ESTADOS UNIDOS</span>
+            TU NEGOCIO EN <span className="text-[#10E836]">EL CELULAR</span>
           </h2>
           
           <p className="text-xs text-gray-300 mt-1">
-            Tocá cada celular para ver la tienda diseñada para tu rubro en EE.UU.:
+            Tocá cada celular para ver la mini app diseñada para tu rubro:
           </p>
         </div>
 

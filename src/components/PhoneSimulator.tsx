@@ -72,13 +72,13 @@ export const PhoneSimulator: React.FC = () => {
         <div className="text-center mb-3">
           <div className="inline-flex items-center gap-1.5 text-lime-400 text-xs font-bold uppercase tracking-wider font-heading mb-1">
             <Smartphone className="w-3.5 h-3.5" />
-            <span>SIMULADOR INTERACTIVO USA</span>
+            <span>SIMULADOR INTERACTIVO</span>
           </div>
           <h2 className="font-heading font-black text-xl sm:text-2xl text-white tracking-wide uppercase leading-tight">
             PROBÁ LA EXPERIENCIA <span className="text-[#10E836]">DESDE EL CELULAR</span>
           </h2>
           <p className="text-xs text-gray-300 mt-1">
-            Tocá los botones y mirá lo simple que es para tus clientes comprar y reservar en USA:
+            Tocá los botones y mirá lo simple que es para tus clientes comprar y reservar:
           </p>
         </div>
 
@@ -95,7 +95,7 @@ export const PhoneSimulator: React.FC = () => {
                 : 'bg-neutral-900 text-gray-300 border border-neutral-800'
             }`}
           >
-            <span>🛒 Supermercado USA</span>
+            <span>🛒 Almacén & Mercado</span>
           </button>
           <button
             onClick={() => {
@@ -142,22 +142,22 @@ export const PhoneSimulator: React.FC = () => {
           {/* Screen Content Container */}
           <div className="rounded-[24px] bg-neutral-900/90 border border-neutral-800 p-3 min-h-[370px] flex flex-col justify-between">
             
-            {/* VIEW 1: SUPERMERCADO & BODEGA SUDAMERICANA EN USA */}
+            {/* VIEW 1: SUPERMERCADO & ALMACÉN */}
             {activeTab === 'bodega' && (
               <div className="space-y-2.5">
                 <div className="flex items-center justify-between border-b border-neutral-800 pb-2">
                   <div className="flex items-center gap-2">
                     <span className="text-xl">🛒</span>
                     <div>
-                      <h4 className="text-xs font-bold text-white leading-tight">Mercado Sudamericano Miami</h4>
+                      <h4 className="text-xs font-bold text-white leading-tight">Mercado & Almacén Digital</h4>
                       <p className="text-[10px] text-lime-400 flex items-center gap-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-lime-400 animate-ping"></span>
-                        Envíos en Florida & todo USA • Zelle OK
+                        Envíos y retiros directos • Catálogo activo
                       </p>
                     </div>
                   </div>
                   <span className="bg-lime-500/20 text-lime-400 text-[9px] px-1.5 py-0.5 rounded font-bold">
-                    USD $
+                    ONLINE
                   </span>
                 </div>
 
@@ -224,7 +224,7 @@ export const PhoneSimulator: React.FC = () => {
                 {/* Cart Action Button */}
                 <div className="pt-2 border-t border-neutral-800">
                   <a
-                    href={createWhatsAppUrl(`¡Hola Mercado Sudamericano! Quiero ordenar estos productos en USA:\n${bodegaItems['yerba'] ? `• ${bodegaItems['yerba']}x Yerba Mate 1kg\n` : ''}${bodegaItems['dulce'] ? `• ${bodegaItems['dulce']}x Dulce de Leche\n` : ''}${bodegaItems['harina'] ? `• ${bodegaItems['harina']}x Harina PAN\n` : ''}Total: $${totalBodega} USD\nPago: Zelle / Tarjeta\nDirección en USA: `)}
+                    href={createWhatsAppUrl(`¡Hola! Quiero ordenar estos productos de mi carrito:\n${bodegaItems['yerba'] ? `• ${bodegaItems['yerba']}x Yerba Mate 1kg\n` : ''}${bodegaItems['dulce'] ? `• ${bodegaItems['dulce']}x Dulce de Leche\n` : ''}${bodegaItems['harina'] ? `• ${bodegaItems['harina']}x Harina PAN\n` : ''}Total: $${totalBodega}\nPago: Transferencia / Efectivo\nDirección de entrega: `)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full relative overflow-hidden bg-[#25D366] text-black font-extrabold text-xs py-2.5 px-3 rounded-xl flex items-center justify-between shadow-[0_0_15px_rgba(37,211,102,0.6)] btn-pulsing-glow active:scale-95 transition-transform group"
@@ -232,10 +232,10 @@ export const PhoneSimulator: React.FC = () => {
                     <div className="absolute inset-0 w-1/3 h-full bg-white/40 skew-x-[-25deg] animate-shimmer pointer-events-none" />
                     <div className="flex items-center gap-1.5">
                       <MessageCircle className="w-4 h-4 fill-black text-black" />
-                      <span>Pedir por WhatsApp (Zelle)</span>
+                      <span>Pedir por WhatsApp</span>
                     </div>
                     <span className="bg-black/20 text-black font-mono font-black px-2 py-0.5 rounded text-[11px]">
-                      ${totalBodega} USD
+                      ${totalBodega}
                     </span>
                   </a>
                   <p className="text-[9px] text-center text-gray-400 mt-1">
@@ -327,15 +327,15 @@ export const PhoneSimulator: React.FC = () => {
               </div>
             )}
 
-            {/* VIEW 3: BARBER SHOP & SALÓN LATINO */}
+            {/* VIEW 3: BARBER SHOP & SALÓN */}
             {activeTab === 'barberia' && (
               <div className="space-y-2.5">
                 <div className="flex items-center justify-between border-b border-neutral-800 pb-2">
                   <div className="flex items-center gap-2">
                     <span className="text-xl">💈</span>
                     <div>
-                      <h4 className="text-xs font-bold text-white leading-tight">Latino Barber Studio Miami</h4>
-                      <p className="text-[10px] text-lime-400">Agenda abierta 24/7 en español</p>
+                      <h4 className="text-xs font-bold text-white leading-tight">Barber Studio & Salón</h4>
+                      <p className="text-[10px] text-lime-400">Agenda abierta 24/7 en el celular</p>
                     </div>
                   </div>
                   <span className="bg-lime-500/20 text-lime-400 text-[10px] px-2 py-0.5 rounded-full font-bold">
@@ -347,9 +347,9 @@ export const PhoneSimulator: React.FC = () => {
                   <p className="text-[10px] text-gray-400 font-bold uppercase mb-1">1. Elegí Servicio</p>
                   <div className="grid grid-cols-1 gap-1.5">
                     {[
-                      { name: 'Corte Degradé + Barba ($35)', time: '45 min' },
-                      { name: 'Corte Clásico + Cejas ($25)', time: '30 min' },
-                      { name: 'Diseño Freestyle + Barba ($45)', time: '50 min' },
+                      { name: 'Corte Degradé + Barba', time: '45 min' },
+                      { name: 'Corte Clásico + Cejas', time: '30 min' },
+                      { name: 'Diseño Freestyle + Barba', time: '50 min' },
                     ].map(srv => (
                       <button
                         key={srv.name}
@@ -394,7 +394,7 @@ export const PhoneSimulator: React.FC = () => {
 
                 <div className="pt-2 border-t border-neutral-800">
                   <a
-                    href={createWhatsAppUrl(`¡Hola! Quiero reservar cita en Barber Studio Miami:\n• Servicio: ${selectedService}\n• Horario: Hoy ${selectedSlot}\n• Nombre: `)}
+                    href={createWhatsAppUrl(`¡Hola! Quiero reservar cita en Barber Studio:\n• Servicio: ${selectedService}\n• Horario: Hoy ${selectedSlot}\n• Nombre: `)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full relative overflow-hidden bg-lime-400 text-black font-extrabold text-xs py-2.5 px-3 rounded-xl flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,232,54,0.6)] btn-pulsing-glow active:scale-95 transition-transform"

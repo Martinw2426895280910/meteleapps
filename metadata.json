@@ -1,6 +1,6 @@
 {
   "name": "METELE APPS",
-  "description": "Soluciones ecommerce y mini apps móviles para comercios sudamericanos en Estados Unidos. Sin comisiones, cobros por Zelle y pedidos directos.",
+  "description": "Mini apps móviles y tiendas online para comercios y negocios. Sin comisiones abusivas, cobros directos y pedidos a WhatsApp.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

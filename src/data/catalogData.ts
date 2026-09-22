@@ -321,110 +321,110 @@ export const CATALOG_ITEMS: CatalogItem[] = [
 
 export const BUSINESS_LIST: BusinessItem[] = [
   {
-    id: 'supermercado-usa',
-    name: 'Supermercado / Bodega Latina en USA',
-    question: '¿Supermercado o Bodega en USA?',
+    id: 'supermercado-general',
+    name: 'Supermercado, Almacén & Fiambrería',
+    question: '¿Supermercado, Almacén o Fiambrería?',
     emoji: '🛒',
-    badge: 'Comunidad Sudamericana en USA',
-    solution: 'Venta online de yerba mate, carnes al corte, dulces, harina pan y productos típicos con cobros por Zelle, tarjetas y envíos locales o por correo en todo Estados Unidos.',
+    badge: 'Ventas Ágiles en Celular',
+    solution: 'Venta online de productos de almacén, carnes al corte, bebidas, lácteos y artículos diarios con cobros digitales, efectivo y envíos directos a domicilio.',
     recommendedFeatures: ['Catálogo digital', 'Carrito de productos', 'Listas de precios', 'Promociones y descuentos', 'WhatsApp directo'],
     sampleAppPreview: {
-      title: 'Mercado Latino & Sudamericano',
-      subtitle: 'Tus productos de siempre en tu casa en USA',
+      title: 'Mercado & Almacén Digital',
+      subtitle: 'Tus compras diarias directo en tu celular',
       items: [
-        { name: 'Yerba Mate Playadito 1kg', detail: 'Importado de Argentina • Stock en Florida', price: '$11.00 USD' },
-        { name: 'Dulce de Leche Colonial 400g', detail: 'Sabor tradicional sudamericano', price: '$8.00 USD' },
-        { name: 'Corte de Asado / Tira para Parrilla', detail: 'Por libra al vacío • Listo para cocinar', price: '$14.50 USD / lb' }
+        { name: 'Yerba Mate Especial 1kg', detail: 'Calidad seleccionada • Stock permanente', price: '$4.200' },
+        { name: 'Dulce de Leche Colonial 400g', detail: 'Sabor tradicional artesanal', price: '$2.800' },
+        { name: 'Corte de Asado Especial para Parrilla', detail: 'Al vacío • Listo para cocinar', price: '$8.500 / kg' }
       ]
     }
   },
   {
-    id: 'restaurante-usa',
-    name: 'Restaurante / Parrilla / Rotisería en USA',
-    question: '¿Restaurante o Delivery en USA?',
+    id: 'restaurante-general',
+    name: 'Restaurante / Parrilla / Rotisería',
+    question: '¿Restaurante, Pizzería o Rotisería?',
     emoji: '🥩',
-    badge: 'Chau 30% a DoorDash / Uber',
-    solution: 'Menú digital interactivo con fotos irresistibles, pedidos directo al WhatsApp del local y cocina, sin comisiones del 30% a plataformas de delivery.',
+    badge: 'Chau 30% de comisiones',
+    solution: 'Menú digital interactivo con fotos irresistibles, pedidos directo al WhatsApp del local y cocina, sin pagar comisiones del 30% a plataformas intermediarias.',
     recommendedFeatures: ['Menú digital', 'Pedidos online', 'Carrito de productos', 'Promociones y descuentos', 'Ubicación y cómo llegar'],
     sampleAppPreview: {
-      title: 'Parrilla Criolla Sudamericana',
+      title: 'Parrilla & Rotisería Criolla',
       subtitle: 'Comida casera auténtica para llevar o delivery',
       items: [
-        { name: 'Docena de Empanadas Artesanales', detail: 'Carne cortada a cuchillo, pollo o jamón', price: '$38.00 USD' },
-        { name: 'Entraña / Picaña Grill con Fritas', detail: 'Porción abundante para 2 personas', price: '$28.00 USD' },
-        { name: 'Sandwich de Milanesa Completo', detail: 'Con lechuga, tomate y huevo frito', price: '$16.00 USD' }
+        { name: 'Docena de Empanadas Artesanales', detail: 'Carne cortada a cuchillo, pollo o jamón', price: '$12.000' },
+        { name: 'Entraña Grill con Papas Fritas', detail: 'Porción abundante para compartir', price: '$16.500' },
+        { name: 'Sandwich de Milanesa Completo', detail: 'Con lechuga, tomate y huevo frito', price: '$8.500' }
       ]
     }
   },
   {
-    id: 'barberia-usa',
-    name: 'Barber Shop / Salón Latino en USA',
-    question: '¿Barbería o Estética en USA?',
+    id: 'barberia-general',
+    name: 'Barber Shop / Salón de Belleza',
+    question: '¿Barbería, Peluquería o Estética?',
     emoji: '💈',
-    badge: 'Turnos 24/7 en Español',
-    solution: 'Agenda interactiva 24/7 en español para que tus clientes hispanos elijan día, hora y barbero sin llamadas ni audios interminables.',
+    badge: 'Turnos 24/7 en el Celular',
+    solution: 'Agenda interactiva 24/7 para que tus clientes elijan día, hora y profesional sin llamadas ni audios interminables.',
     recommendedFeatures: ['Reserva de turnos', 'Fichas de servicios', 'Galería de productos y trabajos', 'Avisos y recordatorios', 'WhatsApp directo'],
     sampleAppPreview: {
-      title: 'Latino Barber Studio Miami',
-      subtitle: 'Cortes modernos y perfilado de barba',
+      title: 'Barber Studio & Salón',
+      subtitle: 'Cortes modernos, perfilado y estética',
       items: [
-        { name: 'Corte Degradé + Barba', detail: '45 min • Toalla caliente y aceite', price: '$35.00 USD' },
-        { name: 'Corte Clásico Masculino / Niño', detail: '30 min • Con barbero de confianza', price: '$25.00 USD' },
-        { name: 'Diseño Freestyle & Cejas', detail: 'Líneas y perfilado al detalle', price: '$40.00 USD' }
+        { name: 'Corte Degradé + Barba', detail: '45 min • Toalla caliente y aceite', price: '$10.000' },
+        { name: 'Corte Clásico Masculino / Niño', detail: '30 min • Con barbero de confianza', price: '$7.500' },
+        { name: 'Diseño Freestyle & Cejas', detail: 'Líneas y perfilado al detalle', price: '$12.000' }
       ]
     }
   },
   {
-    id: 'panaderia-usa',
-    name: 'Panadería / Pastelería Sudamericana en USA',
-    question: '¿Panadería o Pastelería en USA?',
+    id: 'panaderia-general',
+    name: 'Panadería / Confitería / Pastelería',
+    question: '¿Panadería, Confitería o Pastelería?',
     emoji: '🥐',
-    badge: 'Medialunas y Tortas de Eventos',
-    solution: 'Catálogo de facturas argentinas, pandebonos, tortas para fiestas latinas con selector de fecha y cobro de seña instantánea por Zelle.',
+    badge: 'Facturas y Tortas de Eventos',
+    solution: 'Catálogo de facturas, medialunas, sándwiches de miga y tortas para fiestas con selector de fecha de entrega y cobro de seña instantánea.',
     recommendedFeatures: ['Catálogo digital', 'Pedidos online', 'Galería de productos y trabajos', 'Presupuestos', 'Comprobantes y pedidos'],
     sampleAppPreview: {
-      title: 'Panadería & Pastelería del Sur',
-      subtitle: 'El auténtico sabor casero en Estados Unidos',
+      title: 'Panadería & Pastelería Artesanal',
+      subtitle: 'El auténtico sabor casero horneado en el día',
       items: [
-        { name: 'Docena de Medialunas de Manteca', detail: 'Horneadas en el día, estilo argentino', price: '$24.00 USD' },
-        { name: 'Torta Chocotorta / Tres Leches', detail: 'Para 12 a 15 personas • Personalizada', price: '$55.00 USD' },
-        { name: 'Box Desayuno Criollo Cumpleaños', detail: 'Taza, alfajores de maicena y jugo', price: '$45.00 USD' }
+        { name: 'Docena de Medialunas de Manteca', detail: 'Horneadas en el día, estilo artesanal', price: '$6.500' },
+        { name: 'Torta Chocotorta / Cumpleaños', detail: 'Para 12 a 15 personas • Personalizada', price: '$22.000' },
+        { name: 'Box Desayuno Cumpleaños Sorpresa', detail: 'Taza, alfajores artesanales y jugo', price: '$18.000' }
       ]
     }
   },
   {
-    id: 'boutique-usa',
-    name: 'Tienda de Ropa / Moda Latina en USA',
-    question: '¿Indumentaria y Calzado en USA?',
+    id: 'boutique-general',
+    name: 'Tienda de Ropa / Indumentaria & Calzado',
+    question: '¿Indumentaria, Calzado y Moda?',
     emoji: '👕',
-    badge: 'Envíos por Correo en todo USA',
-    solution: 'Catálogo visual rápido para vender prendas y calzado desde Instagram o TikTok, con checkout directo a WhatsApp y envíos por USPS o UPS.',
+    badge: 'Envíos y Retiro en Local',
+    solution: 'Catálogo visual rápido para vender prendas y calzado desde Instagram o TikTok, con checkout directo a WhatsApp y envíos a domicilio.',
     recommendedFeatures: ['Catálogo digital', 'Carrito de productos', 'Listas de precios', 'Promociones y descuentos', 'Ubicación y cómo llegar'],
     sampleAppPreview: {
-      title: 'Moda Latina USA',
-      subtitle: 'Streetwear, camisetas y estilo sudamericano',
+      title: 'Moda Urbana & Indumentaria',
+      subtitle: 'Streetwear, calzado y accesorios de temporada',
       items: [
-        { name: 'Camiseta Selección Argentina / Colombia', detail: 'Talles S al XXL • Calidad premium', price: '$35.00 USD' },
-        { name: 'Hoodie Oversize Sudamérica', detail: 'Algodón pesado frizado unisex', price: '$48.00 USD' },
-        { name: 'Gorra Urbana Bordada', detail: 'Varios colores • Envío a todo USA', price: '$22.00 USD' }
+        { name: 'Remera Algodón Peinado Premium', detail: 'Talles S al XXL • Variedad de colores', price: '$16.000' },
+        { name: 'Hoodie Oversize Frizado', detail: 'Algodón pesado frizado unisex', price: '$32.000' },
+        { name: 'Gorra Urbana Bordada', detail: 'Ajustable • Diseños exclusivos', price: '$14.000' }
       ]
     }
   },
   {
-    id: 'envios-usa',
-    name: 'Envíos & Encomiendas a Sudamérica',
-    question: '¿Envíos a Sudamérica desde USA?',
+    id: 'envios-general',
+    name: 'Logística, Fletes & Encomiendas',
+    question: '¿Fletes, Envíos o Logística?',
     emoji: '📦',
-    badge: 'Cargas Aéreas y Marítimas',
-    solution: 'Cotizador por libra y medidas para envíos puerta a puerta a Argentina, Colombia, Venezuela, Perú y Chile, con tracking por WhatsApp.',
+    badge: 'Cotizador Inmediato',
+    solution: 'Cotizador por bultos y distancia para traslados y envíos puerta a puerta con confirmación y seguimiento por WhatsApp.',
     recommendedFeatures: ['Calculadoras y cotizadores', 'WhatsApp directo', 'Formularios de contacto', 'Listas de precios', 'Solicitud de servicios'],
     sampleAppPreview: {
-      title: 'Latam Express Courier USA',
-      subtitle: 'Envíos seguros a tu familia en Sudamérica',
+      title: 'Express Fletes & Envíos',
+      subtitle: 'Traslados seguros y encomiendas directas',
       items: [
-        { name: 'Envío Aéreo Puerta a Puerta (por lb)', detail: 'Entrega en 5-8 días hábiles con seguro', price: '$6.50 USD / lb' },
-        { name: 'Caja Marítima Familiar Consolidada', detail: 'Ideal para ropa y electrodomésticos', price: '$120.00 USD' },
-        { name: 'Pick-up a Domicilio en Miami/Orlando', detail: 'Retiramos las cajas en tu puerta', price: 'Gratis > 30 lbs' }
+        { name: 'Envío Puerta a Puerta en el Día', detail: 'Entrega rápida con seguro de carga', price: '$3.500 base' },
+        { name: 'Flete Mediano para Mudanzas', detail: 'Camioneta con chofer y ayudante', price: '$25.000 / hora' },
+        { name: 'Retiro de Paquetes en Local', detail: 'Servicio programado para comercios', price: 'A convenir' }
       ]
     }
   },

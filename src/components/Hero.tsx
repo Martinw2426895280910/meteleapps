@@ -21,12 +21,12 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCatalog, onExploreBusinesse
         
         {/* Top Attention Eyebrow */}
         <div className="inline-flex items-center gap-1.5 bg-neutral-900/90 border border-lime-400/40 px-3 py-1 rounded-full shadow-[0_0_12px_rgba(37,211,102,0.2)] mb-3">
-          <span className="text-base">🇺🇸</span>
+          <Sparkles className="w-3.5 h-3.5 text-lime-400 animate-pulse" />
           <span className="text-xs font-heading font-black tracking-wider text-lime-400 uppercase">
-            COMERCIOS EN ESTADOS UNIDOS
+            MINI APPS & ECOMMERCE MÓVIL
           </span>
           <span className="text-xs font-heading font-black text-black bg-lime-400 px-1.5 py-0.5 rounded text-[10px]">
-            LATINOS
+            OFICIAL
           </span>
         </div>
 
@@ -51,7 +51,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCatalog, onExploreBusinesse
 
           <div className="absolute -bottom-1 -left-2 bg-neutral-950 border border-emerald-400 px-2 py-0.5 rounded-full shadow-lg flex items-center gap-1">
             <Zap className="w-3 h-3 text-yellow-400" />
-            <span className="text-[10px] font-black text-lime-300 font-heading">ZELLE & APPLE PAY</span>
+            <span className="text-[10px] font-black text-lime-300 font-heading">PAGOS DIRECTOS</span>
           </div>
         </div>
 
@@ -63,7 +63,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCatalog, onExploreBusinesse
           <div className="flex items-center justify-center gap-2 my-0.5">
             <div className="h-[1.5px] w-8 bg-lime-400/60" />
             <span className="text-[10px] sm:text-[11px] font-extrabold tracking-[0.2em] text-white uppercase font-heading">
-              COMUNIDADES SUDAMERICANAS EN USA
+              MINI APPS PARA COMERCIOS REALES
             </span>
             <div className="h-[1.5px] w-8 bg-lime-400/60" />
           </div>
@@ -76,24 +76,24 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCatalog, onExploreBusinesse
 
         {/* Ultra-Concise Core Pitch */}
         <p className="text-gray-200 text-xs sm:text-sm font-medium px-2 leading-snug mb-3">
-          📲 Creamos la <span className="text-lime-400 font-bold">tienda o mini app en el celular</span> de tu supermercado, restaurante, panadería o boutique latina en EE.UU. <span className="text-white font-bold">Sin comisiones del 30%.</span>
+          📲 Creamos la <span className="text-lime-400 font-bold">tienda o mini app en el celular</span> de tu supermercado, restaurante, panadería o negocio. <span className="text-white font-bold">Sin comisiones del 30%.</span>
         </p>
 
         {/* 4 Visual Graphic Chips */}
         <div className="w-full grid grid-cols-2 gap-1.5 my-2 text-left">
           <div className="bg-neutral-900/90 border border-lime-400/40 p-2 rounded-xl flex items-center gap-2">
-            <span className="text-lg shrink-0">🇺🇸</span>
+            <span className="text-lg shrink-0">📱</span>
             <div className="min-w-0">
-              <p className="text-[10px] font-black text-white font-heading leading-tight truncate">MERCADO USA</p>
-              <p className="text-[9px] text-lime-400 leading-none">Florida, TX, NY, CA</p>
+              <p className="text-[10px] font-black text-white font-heading leading-tight truncate">TU PROPIA APP</p>
+              <p className="text-[9px] text-lime-400 leading-none">En el celular del cliente</p>
             </div>
           </div>
 
           <div className="bg-neutral-900/90 border border-lime-400/40 p-2 rounded-xl flex items-center gap-2">
             <span className="text-lg shrink-0">💵</span>
             <div className="min-w-0">
-              <p className="text-[10px] font-black text-white font-heading leading-tight truncate">ZELLE & APPLE PAY</p>
-              <p className="text-[9px] text-lime-400 leading-none">Cobros directos</p>
+              <p className="text-[10px] font-black text-white font-heading leading-tight truncate">PAGOS DIRECTOS</p>
+              <p className="text-[9px] text-lime-400 leading-none">Cobros sin intermediarios</p>
             </div>
           </div>
 
@@ -101,7 +101,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCatalog, onExploreBusinesse
             <span className="text-lg shrink-0">🚫</span>
             <div className="min-w-0">
               <p className="text-[10px] font-black text-white font-heading leading-tight truncate">$0 COMISIONES</p>
-              <p className="text-[9px] text-lime-400 leading-none">Chau DoorDash/Uber</p>
+              <p className="text-[9px] text-lime-400 leading-none">Ganancia 100% tuya</p>
             </div>
           </div>
 
@@ -109,7 +109,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCatalog, onExploreBusinesse
             <span className="text-lg shrink-0">📦</span>
             <div className="min-w-0">
               <p className="text-[10px] font-black text-white font-heading leading-tight truncate">DELIVERY & ENVIOS</p>
-              <p className="text-[9px] text-lime-400 leading-none">Local y todo USA</p>
+              <p className="text-[9px] text-lime-400 leading-none">Directo a tu WhatsApp</p>
             </div>
           </div>
         </div>

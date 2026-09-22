@@ -30,13 +30,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBuilder, onOpenCatalog }) 
               <span className="font-heading font-extrabold text-base tracking-wider text-white">
                 METELE <span className="text-[#10E836]">APP$</span>
               </span>
-              <span className="bg-lime-500/20 text-lime-400 border border-lime-400/40 text-[9px] font-bold px-1.5 py-0.2 rounded-full uppercase tracking-widest flex items-center gap-1">
-                <span>USA</span>
-                <span>🇺🇸</span>
+              <span className="bg-lime-500/20 text-lime-400 border border-lime-400/40 text-[9px] font-bold px-1.5 py-0.5 rounded-full uppercase tracking-widest">
+                OFICIAL
               </span>
             </div>
             <span className="text-[10px] text-gray-400 tracking-tight leading-none">
-              Comercios Latinos en EE.UU.
+              Mini Apps para Comercios y Negocios
             </span>
           </div>
         </a>
