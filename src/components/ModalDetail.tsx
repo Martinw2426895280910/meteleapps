@@ -1,7 +1,7 @@
 import React from 'react';
 import { X, Check, MessageCircle, Sparkles } from 'lucide-react';
 import { CatalogItem } from '../types';
-import { createWhatsAppUrl, DISPLAY_PHONE_INTL } from '../data/catalogData';
+import { createWhatsAppUrl } from '../data/catalogData';
 import { audioEngine } from '../utils/audioEngine';
 
 interface ModalDetailProps {
@@ -114,7 +114,7 @@ export const ModalDetail: React.FC<ModalDetailProps> = ({
           >
             <div className="absolute inset-0 w-1/3 h-full bg-white/40 skew-x-[-25deg] animate-shimmer pointer-events-none" />
             <MessageCircle className="w-4 h-4 fill-black text-black group-hover:scale-110 transition-transform shrink-0" />
-            <span>Consultar por WhatsApp ({DISPLAY_PHONE_INTL})</span>
+            <span>HACE CLICKS AHORA !! Promoción 🔥</span>
           </a>
         </div>
 

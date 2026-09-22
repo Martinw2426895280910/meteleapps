@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Sparkles, Check, MessageCircle, RefreshCw, Smartphone, ChevronRight } from 'lucide-react';
-import { CATALOG_ITEMS, BUSINESS_LIST, createWhatsAppUrl, DISPLAY_PHONE, DISPLAY_PHONE_INTL } from '../data/catalogData';
+import { CATALOG_ITEMS, BUSINESS_LIST, createWhatsAppUrl } from '../data/catalogData';
 import { audioEngine } from '../utils/audioEngine';
 
 interface AppBuilderCalculatorProps {
@@ -195,10 +195,9 @@ ${selectedFeatures.map(f => `• ${f}`).join('\n')}
           >
             <div className="absolute inset-0 w-1/3 h-full bg-white/40 skew-x-[-25deg] animate-shimmer pointer-events-none" />
             <MessageCircle className="w-6 h-6 fill-black text-black group-hover:rotate-12 transition-transform shrink-0" />
-            <div className="flex flex-col items-start leading-none text-left">
-              <span className="text-[10px] tracking-wider text-black/80 font-bold">Enviar Cotización a WhatsApp</span>
-              <span className="text-xs sm:text-sm font-black text-black">{DISPLAY_PHONE_INTL}</span>
-            </div>
+            <span className="font-heading font-black text-sm sm:text-base text-black">
+              HACE CLICKS AHORA !! Promoción 🔥
+            </span>
           </a>
 
           <p className="text-[10px] text-center text-gray-400 mt-2 font-medium">

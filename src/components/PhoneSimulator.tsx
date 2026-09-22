@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Smartphone, ShoppingBag, Calendar, Check, MessageCircle, Plus, Minus, ArrowRight, Star, Sparkles, DollarSign } from 'lucide-react';
-import { DISPLAY_PHONE_INTL, createWhatsAppUrl } from '../data/catalogData';
+import { createWhatsAppUrl } from '../data/catalogData';
 import { audioEngine } from '../utils/audioEngine';
 
 type DemoTab = 'bodega' | 'restaurante' | 'barberia';
@@ -408,6 +408,21 @@ export const PhoneSimulator: React.FC = () => {
             )}
 
           </div>
+        </div>
+
+        {/* Action Button Below Simulator */}
+        <div className="mt-4">
+          <a
+            href={createWhatsAppUrl("¡Hola! 🔥 Estuve probando el simulador de celular y quiero esta Mini App para mi negocio con la Promoción activa.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => audioEngine.playTap()}
+            className="w-full relative overflow-hidden inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#25D366] via-[#10E836] to-[#25D366] text-black font-heading font-black text-xs sm:text-sm py-3 px-4 rounded-xl shadow-[0_0_20px_rgba(37,211,102,0.7)] btn-pulsing-intense active:scale-95 transition-transform uppercase tracking-wider"
+          >
+            <div className="absolute inset-0 w-1/3 h-full bg-white/40 skew-x-[-25deg] animate-shimmer pointer-events-none" />
+            <MessageCircle className="w-4 h-4 fill-black text-black shrink-0" />
+            <span>HACE CLICKS AHORA !! Promoción 🔥</span>
+          </a>
         </div>
 
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { MessageCircle, Rocket, ArrowDown, CheckCircle2, Zap, Smartphone, Globe, Bot, Megaphone, TrendingUp, Sparkles } from 'lucide-react';
-import { DISPLAY_PHONE, DISPLAY_PHONE_INTL, createWhatsAppUrl, PILL_PILLARS } from '../data/catalogData';
+import { createWhatsAppUrl, PILL_PILLARS } from '../data/catalogData';
 import { audioEngine } from '../utils/audioEngine';
 
 interface HeroProps {
@@ -138,19 +138,12 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCatalog, onExploreBusinesse
               </div>
 
               <div className="flex-1 flex flex-col items-start leading-tight min-w-0">
-                <div className="flex flex-wrap items-center gap-1.5 w-full">
-                  <span className="font-heading font-black text-xs sm:text-sm tracking-wider text-white">
-                    ¡WHATSAPP DIRECTO!
-                  </span>
-                  <span className="font-heading font-black text-sm sm:text-base text-[#FFA500] tracking-wide neon-glow-yellow">
-                    {DISPLAY_PHONE_INTL}
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 mt-0.5">
-                  <span className="text-[10px] sm:text-[11px] text-lime-400 font-bold uppercase tracking-widest font-heading">
-                    SOLUCIONES USA & LATAM • RESPUESTA AL INSTANTE
-                  </span>
-                </div>
+                <span className="font-heading font-black text-sm sm:text-base text-[#10E836] tracking-wide uppercase drop-shadow-[0_0_10px_rgba(16,232,54,0.7)]">
+                  HACE CLICKS AHORA !! Promoción 🔥
+                </span>
+                <span className="text-[10px] text-gray-300 font-semibold mt-0.5">
+                  Consultá gratis por WhatsApp • Respuesta al instante
+                </span>
               </div>
 
               <div className="hidden xs:flex items-center justify-center bg-lime-400/20 border border-lime-400/40 rounded-full w-8 h-8 shrink-0 text-lime-400 group-hover:translate-x-0.5 transition-transform">

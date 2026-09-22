@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronRight, MessageCircle, Sparkles, CheckCircle, Smartphone } from 'lucide-react';
-import { BUSINESS_LIST, createWhatsAppUrl, DISPLAY_PHONE_INTL } from '../data/catalogData';
+import { BUSINESS_LIST, createWhatsAppUrl } from '../data/catalogData';
 import { BusinessItem } from '../types';
 import { audioEngine } from '../utils/audioEngine';
 
@@ -143,7 +143,7 @@ export const BusinessSolutions: React.FC<BusinessSolutionsProps> = ({ onSelectBu
             >
               <div className="absolute inset-0 w-1/3 h-full bg-white/40 skew-x-[-25deg] animate-shimmer pointer-events-none" />
               <MessageCircle className="w-5 h-5 fill-black text-black group-hover:scale-110 transition-transform shrink-0" />
-              <span className="truncate">Quiero mi Mini App para {selectedBiz.name.split('/')[0].trim()} ({DISPLAY_PHONE_INTL})</span>
+              <span className="truncate">HACE CLICKS AHORA !! Promoción 🔥</span>
             </a>
 
             <button

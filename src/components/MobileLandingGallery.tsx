@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Smartphone, ExternalLink, Sparkles, ChevronRight, Eye, Layers, CheckCircle2, MessageCircle, ArrowRight, ShieldCheck, DollarSign } from 'lucide-react';
-import { createWhatsAppUrl, DISPLAY_PHONE_INTL } from '../data/catalogData';
+import { createWhatsAppUrl } from '../data/catalogData';
 import { audioEngine } from '../utils/audioEngine';
 
 interface MockupExample {
@@ -250,7 +250,7 @@ export const MobileLandingGallery: React.FC = () => {
           >
             <div className="absolute inset-0 w-1/3 h-full bg-white/40 skew-x-[-25deg] animate-shimmer pointer-events-none" />
             <MessageCircle className="w-4 h-4 fill-black text-black group-hover:scale-110 transition-transform shrink-0" />
-            <span className="truncate">Quiero este Ecommerce para mi Comercio ({DISPLAY_PHONE_INTL})</span>
+            <span className="truncate">HACE CLICKS AHORA !! Promoción 🔥</span>
           </a>
 
         </div>

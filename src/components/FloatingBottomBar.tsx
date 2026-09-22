@@ -1,6 +1,6 @@
 import React from 'react';
 import { Home, Layers, Sparkles, MessageCircle, Briefcase, Smartphone } from 'lucide-react';
-import { DISPLAY_PHONE_INTL, createWhatsAppUrl } from '../data/catalogData';
+import { createWhatsAppUrl } from '../data/catalogData';
 import { audioEngine } from '../utils/audioEngine';
 
 interface FloatingBottomBarProps {
@@ -38,11 +38,11 @@ export const FloatingBottomBar: React.FC<FloatingBottomBarProps> = ({
             </div>
 
             <div className="flex flex-col items-start leading-none text-left">
-              <span className="font-heading font-black text-[10px] tracking-wider text-black/80 uppercase">
-                WhatsApp Oficial
+              <span className="font-heading font-black text-xs sm:text-sm tracking-wide text-black uppercase">
+                HACE CLICKS AHORA !! Promoción 🔥
               </span>
-              <span className="font-heading font-black text-xs sm:text-sm tracking-wide text-black">
-                {DISPLAY_PHONE_INTL}
+              <span className="text-[10px] font-bold text-black/80">
+                Consulta instantánea por WhatsApp
               </span>
             </div>
 

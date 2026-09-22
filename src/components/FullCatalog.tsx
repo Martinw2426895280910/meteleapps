@@ -213,6 +213,21 @@ export const FullCatalog: React.FC<FullCatalogProps> = ({
         )}
       </div>
 
+      {/* Catalog Bottom CTA */}
+      <div className="mt-5 text-center">
+        <a
+          href={createWhatsAppUrl("¡Hola! 🔥 Estuve mirando el catálogo de 28 funciones y quiero cotizar mi Mini App con la Promoción activa.")}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => audioEngine.playTap()}
+          className="w-full relative overflow-hidden inline-flex items-center justify-center gap-2 bg-[#10E836] hover:bg-[#00c929] text-black font-heading font-black text-xs sm:text-sm py-3 px-4 rounded-xl shadow-[0_0_25px_rgba(16,232,54,0.8)] btn-pulsing-intense active:scale-95 transition-all uppercase tracking-wide"
+        >
+          <div className="absolute inset-0 w-1/3 h-full bg-white/40 skew-x-[-25deg] animate-shimmer pointer-events-none" />
+          <MessageCircle className="w-4 h-4 fill-black text-black shrink-0" />
+          <span>HACE CLICKS AHORA !! Promoción 🔥</span>
+        </a>
+      </div>
+
     </section>
   );
 };

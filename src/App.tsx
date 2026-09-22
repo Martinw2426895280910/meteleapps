@@ -8,6 +8,7 @@ import { FullCatalog } from './components/FullCatalog';
 import { BusinessSolutions } from './components/BusinessSolutions';
 import { AppBuilderCalculator } from './components/AppBuilderCalculator';
 import { WhyMiniApps } from './components/WhyMiniApps';
+import { SatisfiedMerchants } from './components/SatisfiedMerchants';
 import { Footer } from './components/Footer';
 import { FloatingBottomBar } from './components/FloatingBottomBar';
 import { ModalDetail } from './components/ModalDetail';
@@ -108,6 +109,9 @@ export default function App() {
 
         {/* Interactive Phone Simulator */}
         <PhoneSimulator />
+
+        {/* Real Satisfied Merchants Showcase with Photos */}
+        <SatisfiedMerchants />
 
         {/* Full 28 Items Catalog */}
         <FullCatalog 

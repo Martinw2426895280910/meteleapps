@@ -1,6 +1,6 @@
 import React from 'react';
 import { MessageCircle, Phone, Flame, Sparkles } from 'lucide-react';
-import { DISPLAY_PHONE, createWhatsAppUrl } from '../data/catalogData';
+import { createWhatsAppUrl } from '../data/catalogData';
 
 interface HeaderProps {
   onOpenBuilder: () => void;
@@ -60,7 +60,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBuilder, onOpenCatalog }) 
           >
             <div className="absolute inset-0 w-1/2 h-full bg-white/40 skew-x-[-25deg] animate-shimmer pointer-events-none" />
             <MessageCircle className="w-4 h-4 fill-black text-black" />
-            <span className="font-heading font-black tracking-tight">WhatsApp</span>
+            <span className="font-heading font-black tracking-tight">HACE CLICKS AHORA !! Promoción 🔥</span>
           </a>
         </div>
       </div>
