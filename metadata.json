@@ -1,6 +1,6 @@
 {
   "name": "METELE APPS",
-  "description": "Landing page móvil exclusiva y catálogo completo de mini apps para negocios reales.",
+  "description": "Soluciones ecommerce y mini apps móviles para comercios sudamericanos en Estados Unidos. Sin comisiones, cobros por Zelle y pedidos directos.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

@@ -1,31 +1,31 @@
 import React, { useState } from 'react';
-import { Smartphone, ShoppingBag, Calendar, Check, MessageCircle, Plus, Minus, ArrowRight, Star, Sparkles } from 'lucide-react';
-import { DISPLAY_PHONE, DISPLAY_PHONE_INTL, createWhatsAppUrl } from '../data/catalogData';
+import { Smartphone, ShoppingBag, Calendar, Check, MessageCircle, Plus, Minus, ArrowRight, Star, Sparkles, DollarSign } from 'lucide-react';
+import { DISPLAY_PHONE_INTL, createWhatsAppUrl } from '../data/catalogData';
 import { audioEngine } from '../utils/audioEngine';
 
-type DemoTab = 'rotiseria' | 'barberia' | 'tienda' | 'taller';
+type DemoTab = 'bodega' | 'restaurante' | 'barberia';
 
 export const PhoneSimulator: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<DemoTab>('rotiseria');
+  const [activeTab, setActiveTab] = useState<DemoTab>('bodega');
 
-  // Rotisería state
-  const [cartItems, setCartItems] = useState<{ [key: string]: number }>({ 'empanadas': 1 });
+  // Bodega / Supermercado state (USD)
+  const [bodegaItems, setBodegaItems] = useState<{ [key: string]: number }>({ 'yerba': 2, 'dulce': 1 });
+
+  // Gastronomía state (USD)
+  const [gastroItems, setGastroItems] = useState<{ [key: string]: number }>({ 'empanadas': 1 });
 
   // Barbería state
-  const [selectedService, setSelectedService] = useState('Corte Degradé + Barba ($8.500)');
-  const [selectedSlot, setSelectedSlot] = useState('17:00 hs');
+  const [selectedService, setSelectedService] = useState('Corte Degradé + Barba ($35)');
+  const [selectedSlot, setSelectedSlot] = useState('4:30 PM');
 
-  // Tienda state
-  const [activeCategory, setActiveCategory] = useState('Todos');
-
-  const addQty = (id: string) => {
+  const addBodegaQty = (id: string) => {
     audioEngine.playToggle();
-    setCartItems(prev => ({ ...prev, [id]: (prev[id] || 0) + 1 }));
+    setBodegaItems(prev => ({ ...prev, [id]: (prev[id] || 0) + 1 }));
   };
 
-  const removeQty = (id: string) => {
+  const removeBodegaQty = (id: string) => {
     audioEngine.playTap();
-    setCartItems(prev => {
+    setBodegaItems(prev => {
       const next = { ...prev };
       if (next[id] > 1) {
         next[id]--;
@@ -36,26 +36,49 @@ export const PhoneSimulator: React.FC = () => {
     });
   };
 
-  const totalCart = 
-    (cartItems['empanadas'] || 0) * 12000 + 
-    (cartItems['pizza'] || 0) * 10500 + 
-    (cartItems['milanesa'] || 0) * 14000;
+  const addGastroQty = (id: string) => {
+    audioEngine.playToggle();
+    setGastroItems(prev => ({ ...prev, [id]: (prev[id] || 0) + 1 }));
+  };
+
+  const removeGastroQty = (id: string) => {
+    audioEngine.playTap();
+    setGastroItems(prev => {
+      const next = { ...prev };
+      if (next[id] > 1) {
+        next[id]--;
+      } else {
+        delete next[id];
+      }
+      return next;
+    });
+  };
+
+  const totalBodega = 
+    (bodegaItems['yerba'] || 0) * 11 + 
+    (bodegaItems['dulce'] || 0) * 8 + 
+    (bodegaItems['harina'] || 0) * 5;
+
+  const totalGastro = 
+    (gastroItems['empanadas'] || 0) * 38 + 
+    (gastroItems['asado'] || 0) * 28 + 
+    (gastroItems['ceviche'] || 0) * 22;
 
   return (
-    <section className="px-4 py-6 bg-gradient-to-b from-[#060907] via-[#09110a] to-[#060907] border-y border-lime-500/20">
+    <section className="px-3 py-6 bg-gradient-to-b from-[#060907] via-[#09110a] to-[#060907] border-y border-lime-500/20">
       <div className="max-w-md mx-auto">
         
-        {/* Section Title */}
-        <div className="text-center mb-4">
+        {/* Section Title - Concise & Punchy */}
+        <div className="text-center mb-3">
           <div className="inline-flex items-center gap-1.5 text-lime-400 text-xs font-bold uppercase tracking-wider font-heading mb-1">
             <Smartphone className="w-3.5 h-3.5" />
-            <span>INTERACTIVO</span>
+            <span>SIMULADOR INTERACTIVO USA</span>
           </div>
-          <h2 className="font-heading font-black text-2xl text-white tracking-wide uppercase leading-tight">
-            ASÍ FUNCIONA UNA <span className="text-[#10E836]">MINI APP</span>
+          <h2 className="font-heading font-black text-xl sm:text-2xl text-white tracking-wide uppercase leading-tight">
+            PROBÁ LA EXPERIENCIA <span className="text-[#10E836]">DESDE EL CELULAR</span>
           </h2>
           <p className="text-xs text-gray-300 mt-1">
-            Tocá los botones y probá la experiencia fluida que tendrán tus clientes desde su celular.
+            Tocá los botones y mirá lo simple que es para tus clientes comprar y reservar en USA:
           </p>
         </div>
 
@@ -64,15 +87,28 @@ export const PhoneSimulator: React.FC = () => {
           <button
             onClick={() => {
               audioEngine.playSelect();
-              setActiveTab('rotiseria');
+              setActiveTab('bodega');
             }}
             className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 ${
-              activeTab === 'rotiseria'
-                ? 'bg-lime-400 text-black shadow-[0_0_12px_rgba(37,211,102,0.4)]'
+              activeTab === 'bodega'
+                ? 'bg-lime-400 text-black font-black shadow-[0_0_12px_rgba(37,211,102,0.4)]'
                 : 'bg-neutral-900 text-gray-300 border border-neutral-800'
             }`}
           >
-            <span>🍕 Menú & Pedidos</span>
+            <span>🛒 Supermercado USA</span>
+          </button>
+          <button
+            onClick={() => {
+              audioEngine.playSelect();
+              setActiveTab('restaurante');
+            }}
+            className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 ${
+              activeTab === 'restaurante'
+                ? 'bg-lime-400 text-black font-black shadow-[0_0_12px_rgba(37,211,102,0.4)]'
+                : 'bg-neutral-900 text-gray-300 border border-neutral-800'
+            }`}
+          >
+            <span>🥟 Delivery & Menú</span>
           </button>
           <button
             onClick={() => {
@@ -81,33 +117,20 @@ export const PhoneSimulator: React.FC = () => {
             }}
             className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 ${
               activeTab === 'barberia'
-                ? 'bg-lime-400 text-black shadow-[0_0_12px_rgba(37,211,102,0.4)]'
+                ? 'bg-lime-400 text-black font-black shadow-[0_0_12px_rgba(37,211,102,0.4)]'
                 : 'bg-neutral-900 text-gray-300 border border-neutral-800'
             }`}
           >
             <span>💈 Turnos 24/7</span>
           </button>
-          <button
-            onClick={() => {
-              audioEngine.playSelect();
-              setActiveTab('tienda');
-            }}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 ${
-              activeTab === 'tienda'
-                ? 'bg-lime-400 text-black shadow-[0_0_12px_rgba(37,211,102,0.4)]'
-                : 'bg-neutral-900 text-gray-300 border border-neutral-800'
-            }`}
-          >
-            <span>🏪 Catálogo Store</span>
-          </button>
         </div>
 
         {/* Simulated Phone Device Frame */}
-        <div className="relative rounded-[28px] border-3 border-neutral-700 bg-neutral-950 p-2 shadow-2xl overflow-hidden">
+        <div className="relative rounded-[32px] border-3 border-neutral-700 bg-neutral-950 p-2 shadow-2xl overflow-hidden">
           {/* Top Notch / Speaker */}
           <div className="flex items-center justify-between px-3 py-1 mb-1 text-[10px] text-gray-400">
-            <span className="font-semibold text-white">9:41</span>
-            <div className="w-16 h-3.5 bg-neutral-800 rounded-full flex items-center justify-center">
+            <span className="font-semibold text-white">9:41 AM</span>
+            <div className="w-16 h-3 bg-neutral-800 rounded-full flex items-center justify-center">
               <div className="w-2 h-2 rounded-full bg-neutral-900"></div>
             </div>
             <div className="flex items-center gap-1">
@@ -117,44 +140,43 @@ export const PhoneSimulator: React.FC = () => {
           </div>
 
           {/* Screen Content Container */}
-          <div className="rounded-[20px] bg-neutral-900/90 border border-neutral-800 p-3 min-h-[380px] flex flex-col justify-between">
+          <div className="rounded-[24px] bg-neutral-900/90 border border-neutral-800 p-3 min-h-[370px] flex flex-col justify-between">
             
-            {/* VIEW 1: ROTISERÍA & GASTRONOMÍA */}
-            {activeTab === 'rotiseria' && (
+            {/* VIEW 1: SUPERMERCADO & BODEGA SUDAMERICANA EN USA */}
+            {activeTab === 'bodega' && (
               <div className="space-y-2.5">
-                {/* Header in Demo */}
                 <div className="flex items-center justify-between border-b border-neutral-800 pb-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-xl">🍕</span>
+                    <span className="text-xl">🛒</span>
                     <div>
-                      <h4 className="text-xs font-bold text-white leading-tight">Rotisería La Criolla</h4>
+                      <h4 className="text-xs font-bold text-white leading-tight">Mercado Sudamericano Miami</h4>
                       <p className="text-[10px] text-lime-400 flex items-center gap-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-lime-400 animate-ping"></span>
-                        Abierto ahora • Envío 30-40 min
+                        Envíos en Florida & todo USA • Zelle OK
                       </p>
                     </div>
                   </div>
-                  <span className="bg-neutral-800 text-[10px] px-2 py-0.5 rounded-md text-gray-300 font-mono">
-                    Mesa / Delivery
+                  <span className="bg-lime-500/20 text-lime-400 text-[9px] px-1.5 py-0.5 rounded font-bold">
+                    USD $
                   </span>
                 </div>
 
                 {/* Items List */}
-                <div className="space-y-2">
+                <div className="space-y-1.5">
                   <div className="bg-neutral-950/80 p-2 rounded-xl border border-neutral-800 flex items-center justify-between">
                     <div>
-                      <p className="text-xs font-bold text-white">Docena Empanadas Caseras</p>
-                      <p className="text-[10px] text-gray-400">Carne cortada a cuchillo / Jamón y queso</p>
-                      <p className="text-xs font-bold text-lime-400 mt-0.5">$12.000</p>
+                      <p className="text-xs font-bold text-white">Yerba Mate Playadito 1kg</p>
+                      <p className="text-[10px] text-gray-400">Importado de Argentina</p>
+                      <p className="text-xs font-bold text-lime-400 mt-0.5">$11.00 USD</p>
                     </div>
-                    {cartItems['empanadas'] ? (
+                    {bodegaItems['yerba'] ? (
                       <div className="flex items-center gap-2 bg-neutral-900 border border-lime-400/40 px-2 py-1 rounded-lg">
-                        <button onClick={() => removeQty('empanadas')} className="text-gray-400 hover:text-white p-0.5"><Minus className="w-3 h-3" /></button>
-                        <span className="text-xs font-bold text-white">{cartItems['empanadas']}</span>
-                        <button onClick={() => addQty('empanadas')} className="text-lime-400 hover:text-lime-300 p-0.5"><Plus className="w-3 h-3" /></button>
+                        <button onClick={() => removeBodegaQty('yerba')} className="text-gray-400 hover:text-white p-0.5"><Minus className="w-3 h-3" /></button>
+                        <span className="text-xs font-bold text-white">{bodegaItems['yerba']}</span>
+                        <button onClick={() => addBodegaQty('yerba')} className="text-lime-400 hover:text-lime-300 p-0.5"><Plus className="w-3 h-3" /></button>
                       </div>
                     ) : (
-                      <button onClick={() => addQty('empanadas')} className="bg-lime-500 hover:bg-lime-400 text-black text-xs font-bold px-2.5 py-1 rounded-lg">
+                      <button onClick={() => addBodegaQty('yerba')} className="bg-lime-500 hover:bg-lime-400 text-black text-xs font-bold px-2.5 py-1 rounded-lg">
                         Agregar
                       </button>
                     )}
@@ -162,18 +184,18 @@ export const PhoneSimulator: React.FC = () => {
 
                   <div className="bg-neutral-950/80 p-2 rounded-xl border border-neutral-800 flex items-center justify-between">
                     <div>
-                      <p className="text-xs font-bold text-white">Pizza Fugazzeta Rellena</p>
-                      <p className="text-[10px] text-gray-400">8 porciones • Muzzarella premium</p>
-                      <p className="text-xs font-bold text-lime-400 mt-0.5">$10.500</p>
+                      <p className="text-xs font-bold text-white">Dulce de Leche Colonial 400g</p>
+                      <p className="text-[10px] text-gray-400">Receta tradicional</p>
+                      <p className="text-xs font-bold text-lime-400 mt-0.5">$8.00 USD</p>
                     </div>
-                    {cartItems['pizza'] ? (
+                    {bodegaItems['dulce'] ? (
                       <div className="flex items-center gap-2 bg-neutral-900 border border-lime-400/40 px-2 py-1 rounded-lg">
-                        <button onClick={() => removeQty('pizza')} className="text-gray-400 hover:text-white p-0.5"><Minus className="w-3 h-3" /></button>
-                        <span className="text-xs font-bold text-white">{cartItems['pizza']}</span>
-                        <button onClick={() => addQty('pizza')} className="text-lime-400 hover:text-lime-300 p-0.5"><Plus className="w-3 h-3" /></button>
+                        <button onClick={() => removeBodegaQty('dulce')} className="text-gray-400 hover:text-white p-0.5"><Minus className="w-3 h-3" /></button>
+                        <span className="text-xs font-bold text-white">{bodegaItems['dulce']}</span>
+                        <button onClick={() => addBodegaQty('dulce')} className="text-lime-400 hover:text-lime-300 p-0.5"><Plus className="w-3 h-3" /></button>
                       </div>
                     ) : (
-                      <button onClick={() => addQty('pizza')} className="bg-lime-500 hover:bg-lime-400 text-black text-xs font-bold px-2.5 py-1 rounded-lg">
+                      <button onClick={() => addBodegaQty('dulce')} className="bg-lime-500 hover:bg-lime-400 text-black text-xs font-bold px-2.5 py-1 rounded-lg">
                         Agregar
                       </button>
                     )}
@@ -181,18 +203,18 @@ export const PhoneSimulator: React.FC = () => {
 
                   <div className="bg-neutral-950/80 p-2 rounded-xl border border-neutral-800 flex items-center justify-between">
                     <div>
-                      <p className="text-xs font-bold text-white">Milanesa Napolitana con Fritas</p>
-                      <p className="text-[10px] text-gray-400">Para 2 personas super abundante</p>
-                      <p className="text-xs font-bold text-lime-400 mt-0.5">$14.000</p>
+                      <p className="text-xs font-bold text-white">Harina PAN Maíz Blanco 1kg</p>
+                      <p className="text-[10px] text-gray-400">Para arepas venezolanas/colombianas</p>
+                      <p className="text-xs font-bold text-lime-400 mt-0.5">$5.00 USD</p>
                     </div>
-                    {cartItems['milanesa'] ? (
+                    {bodegaItems['harina'] ? (
                       <div className="flex items-center gap-2 bg-neutral-900 border border-lime-400/40 px-2 py-1 rounded-lg">
-                        <button onClick={() => removeQty('milanesa')} className="text-gray-400 hover:text-white p-0.5"><Minus className="w-3 h-3" /></button>
-                        <span className="text-xs font-bold text-white">{cartItems['milanesa']}</span>
-                        <button onClick={() => addQty('milanesa')} className="text-lime-400 hover:text-lime-300 p-0.5"><Plus className="w-3 h-3" /></button>
+                        <button onClick={() => removeBodegaQty('harina')} className="text-gray-400 hover:text-white p-0.5"><Minus className="w-3 h-3" /></button>
+                        <span className="text-xs font-bold text-white">{bodegaItems['harina']}</span>
+                        <button onClick={() => addBodegaQty('harina')} className="text-lime-400 hover:text-lime-300 p-0.5"><Plus className="w-3 h-3" /></button>
                       </div>
                     ) : (
-                      <button onClick={() => addQty('milanesa')} className="bg-lime-500 hover:bg-lime-400 text-black text-xs font-bold px-2.5 py-1 rounded-lg">
+                      <button onClick={() => addBodegaQty('harina')} className="bg-lime-500 hover:bg-lime-400 text-black text-xs font-bold px-2.5 py-1 rounded-lg">
                         Agregar
                       </button>
                     )}
@@ -202,7 +224,7 @@ export const PhoneSimulator: React.FC = () => {
                 {/* Cart Action Button */}
                 <div className="pt-2 border-t border-neutral-800">
                   <a
-                    href={createWhatsAppUrl(`¡Hola Rotisería La Criolla! Quiero hacer este pedido online:\n${cartItems['empanadas'] ? `• ${cartItems['empanadas']}x Docena Empanadas\n` : ''}${cartItems['pizza'] ? `• ${cartItems['pizza']}x Pizza Fugazzeta\n` : ''}${cartItems['milanesa'] ? `• ${cartItems['milanesa']}x Milanesa Napolitana\n` : ''}Total estimado: $${totalCart.toLocaleString()}\nDirección de envío: `)}
+                    href={createWhatsAppUrl(`¡Hola Mercado Sudamericano! Quiero ordenar estos productos en USA:\n${bodegaItems['yerba'] ? `• ${bodegaItems['yerba']}x Yerba Mate 1kg\n` : ''}${bodegaItems['dulce'] ? `• ${bodegaItems['dulce']}x Dulce de Leche\n` : ''}${bodegaItems['harina'] ? `• ${bodegaItems['harina']}x Harina PAN\n` : ''}Total: $${totalBodega} USD\nPago: Zelle / Tarjeta\nDirección en USA: `)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full relative overflow-hidden bg-[#25D366] text-black font-extrabold text-xs py-2.5 px-3 rounded-xl flex items-center justify-between shadow-[0_0_15px_rgba(37,211,102,0.6)] btn-pulsing-glow active:scale-95 transition-transform group"
@@ -210,32 +232,114 @@ export const PhoneSimulator: React.FC = () => {
                     <div className="absolute inset-0 w-1/3 h-full bg-white/40 skew-x-[-25deg] animate-shimmer pointer-events-none" />
                     <div className="flex items-center gap-1.5">
                       <MessageCircle className="w-4 h-4 fill-black text-black" />
-                      <span>Pedir por WhatsApp</span>
+                      <span>Pedir por WhatsApp (Zelle)</span>
                     </div>
                     <span className="bg-black/20 text-black font-mono font-black px-2 py-0.5 rounded text-[11px]">
-                      ${totalCart.toLocaleString()}
+                      ${totalBodega} USD
                     </span>
                   </a>
                   <p className="text-[9px] text-center text-gray-400 mt-1">
-                    Llega ordenado a tu celular sin comisión de apps de delivery
+                    Directo al WhatsApp del dueño • Cero comisiones a plataformas
                   </p>
                 </div>
               </div>
             )}
 
-            {/* VIEW 2: BARBERÍA / PELUQUERÍA */}
+            {/* VIEW 2: RESTAURANTE & GASTRONOMÍA SUDAMERICANA */}
+            {activeTab === 'restaurante' && (
+              <div className="space-y-2.5">
+                <div className="flex items-center justify-between border-b border-neutral-800 pb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl">🥩</span>
+                    <div>
+                      <h4 className="text-xs font-bold text-white leading-tight">Parrilla & Empanadas Grill</h4>
+                      <p className="text-[10px] text-lime-400 flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-lime-400 animate-ping"></span>
+                        Take-out y Delivery • Sin 30% DoorDash
+                      </p>
+                    </div>
+                  </div>
+                  <span className="bg-lime-500/20 text-lime-400 text-[9px] px-1.5 py-0.5 rounded font-bold">
+                    $0 Comisión
+                  </span>
+                </div>
+
+                <div className="space-y-1.5">
+                  <div className="bg-neutral-950/80 p-2 rounded-xl border border-neutral-800 flex items-center justify-between">
+                    <div>
+                      <p className="text-xs font-bold text-white">Docena de Empanadas Artesanales</p>
+                      <p className="text-[10px] text-gray-400">Carne cortada, pollo o humita</p>
+                      <p className="text-xs font-bold text-lime-400 mt-0.5">$38.00 USD</p>
+                    </div>
+                    {gastroItems['empanadas'] ? (
+                      <div className="flex items-center gap-2 bg-neutral-900 border border-lime-400/40 px-2 py-1 rounded-lg">
+                        <button onClick={() => removeGastroQty('empanadas')} className="text-gray-400 hover:text-white p-0.5"><Minus className="w-3 h-3" /></button>
+                        <span className="text-xs font-bold text-white">{gastroItems['empanadas']}</span>
+                        <button onClick={() => addGastroQty('empanadas')} className="text-lime-400 hover:text-lime-300 p-0.5"><Plus className="w-3 h-3" /></button>
+                      </div>
+                    ) : (
+                      <button onClick={() => addGastroQty('empanadas')} className="bg-lime-500 hover:bg-lime-400 text-black text-xs font-bold px-2.5 py-1 rounded-lg">
+                        Agregar
+                      </button>
+                    )}
+                  </div>
+
+                  <div className="bg-neutral-950/80 p-2 rounded-xl border border-neutral-800 flex items-center justify-between">
+                    <div>
+                      <p className="text-xs font-bold text-white">Entraña / Picaña a la Parrilla</p>
+                      <p className="text-[10px] text-gray-400">Con papas rústicas y chimichurri</p>
+                      <p className="text-xs font-bold text-lime-400 mt-0.5">$28.00 USD</p>
+                    </div>
+                    {gastroItems['asado'] ? (
+                      <div className="flex items-center gap-2 bg-neutral-900 border border-lime-400/40 px-2 py-1 rounded-lg">
+                        <button onClick={() => removeGastroQty('asado')} className="text-gray-400 hover:text-white p-0.5"><Minus className="w-3 h-3" /></button>
+                        <span className="text-xs font-bold text-white">{gastroItems['asado']}</span>
+                        <button onClick={() => addGastroQty('asado')} className="text-lime-400 hover:text-lime-300 p-0.5"><Plus className="w-3 h-3" /></button>
+                      </div>
+                    ) : (
+                      <button onClick={() => addGastroQty('asado')} className="bg-lime-500 hover:bg-lime-400 text-black text-xs font-bold px-2.5 py-1 rounded-lg">
+                        Agregar
+                      </button>
+                    )}
+                  </div>
+                </div>
+
+                <div className="pt-2 border-t border-neutral-800">
+                  <a
+                    href={createWhatsAppUrl(`¡Hola Parrilla & Empanadas! Quiero encargar este pedido:\n${gastroItems['empanadas'] ? `• ${gastroItems['empanadas']}x Docena Empanadas\n` : ''}${gastroItems['asado'] ? `• ${gastroItems['asado']}x Entraña Parrilla\n` : ''}Total: $${totalGastro} USD\nForma de entrega (Pickup / Delivery): `)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full relative overflow-hidden bg-[#25D366] text-black font-extrabold text-xs py-2.5 px-3 rounded-xl flex items-center justify-between shadow-[0_0_15px_rgba(37,211,102,0.6)] btn-pulsing-glow active:scale-95 transition-transform group"
+                  >
+                    <div className="absolute inset-0 w-1/3 h-full bg-white/40 skew-x-[-25deg] animate-shimmer pointer-events-none" />
+                    <div className="flex items-center gap-1.5">
+                      <MessageCircle className="w-4 h-4 fill-black text-black" />
+                      <span>Pedir directo al local</span>
+                    </div>
+                    <span className="bg-black/20 text-black font-mono font-black px-2 py-0.5 rounded text-[11px]">
+                      ${totalGastro} USD
+                    </span>
+                  </a>
+                  <p className="text-[9px] text-center text-gray-400 mt-1">
+                    Tu restaurante se queda con el 100% del dinero
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* VIEW 3: BARBER SHOP & SALÓN LATINO */}
             {activeTab === 'barberia' && (
               <div className="space-y-2.5">
                 <div className="flex items-center justify-between border-b border-neutral-800 pb-2">
                   <div className="flex items-center gap-2">
                     <span className="text-xl">💈</span>
                     <div>
-                      <h4 className="text-xs font-bold text-white leading-tight">Barbería & Spa VIP</h4>
-                      <p className="text-[10px] text-lime-400">Elegí tu turno en 2 pasos</p>
+                      <h4 className="text-xs font-bold text-white leading-tight">Latino Barber Studio Miami</h4>
+                      <p className="text-[10px] text-lime-400">Agenda abierta 24/7 en español</p>
                     </div>
                   </div>
                   <span className="bg-lime-500/20 text-lime-400 text-[10px] px-2 py-0.5 rounded-full font-bold">
-                    Turnos 24/7
+                    Turnos VIP
                   </span>
                 </div>
 
@@ -243,9 +347,9 @@ export const PhoneSimulator: React.FC = () => {
                   <p className="text-[10px] text-gray-400 font-bold uppercase mb-1">1. Elegí Servicio</p>
                   <div className="grid grid-cols-1 gap-1.5">
                     {[
-                      { name: 'Corte Degradé + Barba ($8.500)', time: '45 min' },
-                      { name: 'Corte Clásico Masculino ($6.000)', time: '30 min' },
-                      { name: 'Perfilado Barba + Toalla ($5.000)', time: '20 min' },
+                      { name: 'Corte Degradé + Barba ($35)', time: '45 min' },
+                      { name: 'Corte Clásico + Cejas ($25)', time: '30 min' },
+                      { name: 'Diseño Freestyle + Barba ($45)', time: '50 min' },
                     ].map(srv => (
                       <button
                         key={srv.name}
@@ -267,9 +371,9 @@ export const PhoneSimulator: React.FC = () => {
                 </div>
 
                 <div>
-                  <p className="text-[10px] text-gray-400 font-bold uppercase mb-1">2. Horarios disponibles hoy</p>
+                  <p className="text-[10px] text-gray-400 font-bold uppercase mb-1">2. Horario disponible</p>
                   <div className="grid grid-cols-3 gap-1.5">
-                    {['15:30 hs', '17:00 hs', '18:15 hs', '19:00 hs', '20:00 hs'].map(slot => (
+                    {['3:00 PM', '4:30 PM', '5:15 PM', '6:00 PM', '7:00 PM'].map(slot => (
                       <button
                         key={slot}
                         onClick={() => {
@@ -290,88 +394,15 @@ export const PhoneSimulator: React.FC = () => {
 
                 <div className="pt-2 border-t border-neutral-800">
                   <a
-                    href={createWhatsAppUrl(`¡Hola! Quiero reservar el turno:\n• Servicio: ${selectedService}\n• Horario: Hoy ${selectedSlot}\n• Nombre:`)}
+                    href={createWhatsAppUrl(`¡Hola! Quiero reservar cita en Barber Studio Miami:\n• Servicio: ${selectedService}\n• Horario: Hoy ${selectedSlot}\n• Nombre: `)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full relative overflow-hidden bg-lime-400 text-black font-extrabold text-xs py-2.5 px-3 rounded-xl flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,232,54,0.6)] btn-pulsing-glow active:scale-95 transition-transform"
                   >
                     <div className="absolute inset-0 w-1/3 h-full bg-white/40 skew-x-[-25deg] animate-shimmer pointer-events-none" />
                     <Check className="w-4 h-4 text-black" />
-                    <span>Confirmar Turno ({selectedSlot})</span>
+                    <span>Confirmar Cita ({selectedSlot})</span>
                   </a>
-                  <p className="text-[9px] text-center text-gray-400 mt-1">
-                    Cero audios interminables. Tu agenda organizada.
-                  </p>
-                </div>
-              </div>
-            )}
-
-            {/* VIEW 3: TIENDA & COMERCIO */}
-            {activeTab === 'tienda' && (
-              <div className="space-y-2.5">
-                <div className="flex items-center justify-between border-b border-neutral-800 pb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xl">🏪</span>
-                    <div>
-                      <h4 className="text-xs font-bold text-white leading-tight">Urbana Store Oficial</h4>
-                      <p className="text-[10px] text-lime-400">Catálogo interactivo</p>
-                    </div>
-                  </div>
-                  <span className="bg-neutral-800 text-[10px] px-2 py-0.5 rounded text-gray-300">
-                    Stock en vivo
-                  </span>
-                </div>
-
-                {/* Categorías */}
-                <div className="flex gap-1 overflow-x-auto pb-1 no-scrollbar">
-                  {['Todos', 'Remeras', 'Pantalones', 'Accesorios'].map(cat => (
-                    <button
-                      key={cat}
-                      onClick={() => {
-                        audioEngine.playTap();
-                        setActiveCategory(cat);
-                      }}
-                      className={`text-[10px] px-2.5 py-1 rounded-full font-bold whitespace-nowrap transition-all ${
-                        activeCategory === cat ? 'bg-lime-400 text-black' : 'bg-neutral-950 text-gray-400'
-                      }`}
-                    >
-                      {cat}
-                    </button>
-                  ))}
-                </div>
-
-                <div className="grid grid-cols-2 gap-2">
-                  <div className="bg-neutral-950 p-2 rounded-xl border border-neutral-800">
-                    <div className="h-16 bg-neutral-900 rounded-lg flex items-center justify-center text-2xl mb-1.5">
-                      👕
-                    </div>
-                    <p className="text-[11px] font-bold text-white truncate">Remera Oversize Heavy</p>
-                    <p className="text-[10px] text-lime-400 font-bold">$16.500</p>
-                  </div>
-
-                  <div className="bg-neutral-950 p-2 rounded-xl border border-neutral-800">
-                    <div className="h-16 bg-neutral-900 rounded-lg flex items-center justify-center text-2xl mb-1.5">
-                      👖
-                    </div>
-                    <p className="text-[11px] font-bold text-white truncate">Cargo Pant Unisex</p>
-                    <p className="text-[10px] text-lime-400 font-bold">$32.000</p>
-                  </div>
-                </div>
-
-                <div className="pt-2 border-t border-neutral-800">
-                  <a
-                    href={createWhatsAppUrl(`¡Hola Urbana Store! Vi su catálogo digital y quiero consultar por disponibilidad de talles.`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full relative overflow-hidden bg-[#25D366] text-black font-extrabold text-xs py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 shadow-[0_0_15px_rgba(37,211,102,0.6)] btn-pulsing-glow active:scale-95 transition-transform"
-                  >
-                    <div className="absolute inset-0 w-1/3 h-full bg-white/40 skew-x-[-25deg] animate-shimmer pointer-events-none" />
-                    <ShoppingBag className="w-4 h-4 fill-black" />
-                    <span>Consultar Stock Directo</span>
-                  </a>
-                  <p className="text-[9px] text-center text-gray-400 mt-1">
-                    Tus clientes ven fotos, talles y precios sin preguntarte uno por uno.
-                  </p>
                 </div>
               </div>
             )}

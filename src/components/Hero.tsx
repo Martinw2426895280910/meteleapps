@@ -21,12 +21,12 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCatalog, onExploreBusinesse
         
         {/* Top Attention Eyebrow */}
         <div className="inline-flex items-center gap-1.5 bg-neutral-900/90 border border-lime-400/40 px-3 py-1 rounded-full shadow-[0_0_12px_rgba(37,211,102,0.2)] mb-3">
-          <span className="text-base">🔥</span>
-          <span className="text-xs font-heading font-black tracking-wider text-lime-400">
-            ¿TENÉS UN NEGOCIO?
+          <span className="text-base">🇺🇸</span>
+          <span className="text-xs font-heading font-black tracking-wider text-lime-400 uppercase">
+            COMERCIOS EN ESTADOS UNIDOS
           </span>
-          <span className="text-xs font-heading font-black text-white bg-lime-500/20 px-1.5 py-0.5 rounded text-[11px]">
-            METELE APPS.
+          <span className="text-xs font-heading font-black text-black bg-lime-400 px-1.5 py-0.5 rounded text-[10px]">
+            LATINOS
           </span>
         </div>
 
@@ -35,7 +35,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCatalog, onExploreBusinesse
           {/* Animated Glow Rings */}
           <div className="absolute -inset-1.5 bg-gradient-to-r from-lime-500 via-emerald-400 to-green-500 rounded-full blur-sm opacity-70 group-hover:opacity-100 transition duration-500 animate-pulse" />
           
-          <div className="relative w-44 h-44 sm:w-48 sm:h-48 rounded-full bg-black border-3 border-lime-400 p-1 shadow-[0_0_25px_rgba(16,232,54,0.4)] overflow-hidden flex items-center justify-center">
+          <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-black border-3 border-lime-400 p-1 shadow-[0_0_25px_rgba(16,232,54,0.4)] overflow-hidden flex items-center justify-center">
             <img 
               src="/assets/metele_apps_mascot.jpg" 
               alt="Mascota METELE APPS" 
@@ -46,88 +46,70 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCatalog, onExploreBusinesse
           {/* Floating Feature Badges */}
           <div className="absolute -top-1 -right-2 bg-neutral-950 border border-lime-400/80 px-2 py-0.5 rounded-full shadow-lg flex items-center gap-1">
             <Rocket className="w-3 h-3 text-lime-400 animate-bounce" />
-            <span className="text-[10px] font-black text-white font-heading">100% MÓVIL</span>
+            <span className="text-[10px] font-black text-white font-heading">ECOMMERCE MÓVIL</span>
           </div>
 
           <div className="absolute -bottom-1 -left-2 bg-neutral-950 border border-emerald-400 px-2 py-0.5 rounded-full shadow-lg flex items-center gap-1">
             <Zap className="w-3 h-3 text-yellow-400" />
-            <span className="text-[10px] font-black text-lime-300 font-heading">SIN COMISIONES</span>
+            <span className="text-[10px] font-black text-lime-300 font-heading">ZELLE & APPLE PAY</span>
           </div>
         </div>
 
         {/* Main Logo Typography */}
         <div className="mt-2 mb-1">
-          <h1 className="font-heading font-black text-3xl sm:text-4xl tracking-wider text-white leading-tight uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+          <h1 className="font-heading font-black text-2xl sm:text-4xl tracking-wider text-white leading-tight uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
             METELE <span className="text-[#10E836] drop-shadow-[0_0_12px_rgba(16,232,54,0.7)]">APP$</span>
           </h1>
           <div className="flex items-center justify-center gap-2 my-0.5">
             <div className="h-[1.5px] w-8 bg-lime-400/60" />
-            <span className="text-[11px] font-extrabold tracking-[0.25em] text-white uppercase font-heading">
-              AGENCIA DIGITAL
+            <span className="text-[10px] sm:text-[11px] font-extrabold tracking-[0.2em] text-white uppercase font-heading">
+              COMUNIDADES SUDAMERICANAS EN USA
             </span>
             <div className="h-[1.5px] w-8 bg-lime-400/60" />
           </div>
         </div>
 
         {/* Yellow-Green Script Ribbon */}
-        <div className="bg-[#bbf722] text-black font-script text-sm sm:text-base px-3.5 py-0.5 rounded-md transform -rotate-1 shadow-md mb-3 border border-black/10 font-bold">
-          Tu negocio en modo digital
+        <div className="bg-[#bbf722] text-black font-script text-sm sm:text-base px-3.5 py-0.5 rounded-md transform -rotate-1 shadow-md mb-2 border border-black/10 font-bold">
+          Tu tienda digital en el celular de tus clientes
         </div>
 
-        {/* Core Description Copy */}
-        <p className="text-gray-200 text-sm sm:text-base font-medium px-2 leading-relaxed mb-4">
-          📲 <span className="text-white font-semibold">Convertimos tu negocio</span> en una herramienta digital <span className="text-lime-400 font-bold">simple, rápida y pensada para usar desde el celular.</span>
+        {/* Ultra-Concise Core Pitch */}
+        <p className="text-gray-200 text-xs sm:text-sm font-medium px-2 leading-snug mb-3">
+          📲 Creamos la <span className="text-lime-400 font-bold">tienda o mini app en el celular</span> de tu supermercado, restaurante, panadería o boutique latina en EE.UU. <span className="text-white font-bold">Sin comisiones del 30%.</span>
         </p>
 
-        {/* 5 Service Pillars (Matching the image badges) */}
-        <div className="w-full grid grid-cols-2 xs:grid-cols-3 gap-1.5 my-3 text-left">
-          <div className="bg-neutral-900/80 border border-lime-400/30 p-2 rounded-xl flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-lime-500/20 text-lime-400 flex items-center justify-center shrink-0">
-              <Smartphone className="w-4 h-4" />
-            </div>
-            <div>
-              <p className="text-[10px] font-black text-white font-heading leading-tight">APPS A MEDIDA</p>
-              <p className="text-[9px] text-gray-400 leading-none">Para tu celular</p>
+        {/* 4 Visual Graphic Chips */}
+        <div className="w-full grid grid-cols-2 gap-1.5 my-2 text-left">
+          <div className="bg-neutral-900/90 border border-lime-400/40 p-2 rounded-xl flex items-center gap-2">
+            <span className="text-lg shrink-0">🇺🇸</span>
+            <div className="min-w-0">
+              <p className="text-[10px] font-black text-white font-heading leading-tight truncate">MERCADO USA</p>
+              <p className="text-[9px] text-lime-400 leading-none">Florida, TX, NY, CA</p>
             </div>
           </div>
 
-          <div className="bg-neutral-900/80 border border-lime-400/30 p-2 rounded-xl flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-lime-500/20 text-lime-400 flex items-center justify-center shrink-0">
-              <Globe className="w-4 h-4" />
-            </div>
-            <div>
-              <p className="text-[10px] font-black text-white font-heading leading-tight">PÁGINAS WEB</p>
-              <p className="text-[9px] text-gray-400 leading-none">Y landing pages</p>
+          <div className="bg-neutral-900/90 border border-lime-400/40 p-2 rounded-xl flex items-center gap-2">
+            <span className="text-lg shrink-0">💵</span>
+            <div className="min-w-0">
+              <p className="text-[10px] font-black text-white font-heading leading-tight truncate">ZELLE & APPLE PAY</p>
+              <p className="text-[9px] text-lime-400 leading-none">Cobros directos</p>
             </div>
           </div>
 
-          <div className="bg-neutral-900/80 border border-lime-400/30 p-2 rounded-xl flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-lime-500/20 text-lime-400 flex items-center justify-center shrink-0">
-              <Bot className="w-4 h-4" />
-            </div>
-            <div>
-              <p className="text-[10px] font-black text-white font-heading leading-tight">CHATBOTS</p>
-              <p className="text-[9px] text-gray-400 leading-none">Automatizaciones</p>
+          <div className="bg-neutral-900/90 border border-lime-400/40 p-2 rounded-xl flex items-center gap-2">
+            <span className="text-lg shrink-0">🚫</span>
+            <div className="min-w-0">
+              <p className="text-[10px] font-black text-white font-heading leading-tight truncate">$0 COMISIONES</p>
+              <p className="text-[9px] text-lime-400 leading-none">Chau DoorDash/Uber</p>
             </div>
           </div>
 
-          <div className="bg-neutral-900/80 border border-lime-400/30 p-2 rounded-xl flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-lime-500/20 text-lime-400 flex items-center justify-center shrink-0">
-              <Megaphone className="w-4 h-4" />
-            </div>
-            <div>
-              <p className="text-[10px] font-black text-white font-heading leading-tight">PUBLICIDAD</p>
-              <p className="text-[9px] text-gray-400 leading-none">Redes sociales</p>
-            </div>
-          </div>
-
-          <div className="col-span-2 xs:col-span-1 bg-neutral-900/80 border border-lime-400/30 p-2 rounded-xl flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-lime-500/20 text-lime-400 flex items-center justify-center shrink-0">
-              <TrendingUp className="w-4 h-4" />
-            </div>
-            <div>
-              <p className="text-[10px] font-black text-white font-heading leading-tight">MARKETING</p>
-              <p className="text-[9px] text-gray-400 leading-none">Diseño & Ventas</p>
+          <div className="bg-neutral-900/90 border border-lime-400/40 p-2 rounded-xl flex items-center gap-2">
+            <span className="text-lg shrink-0">📦</span>
+            <div className="min-w-0">
+              <p className="text-[10px] font-black text-white font-heading leading-tight truncate">DELIVERY & ENVIOS</p>
+              <p className="text-[9px] text-lime-400 leading-none">Local y todo USA</p>
             </div>
           </div>
         </div>
@@ -138,7 +120,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCatalog, onExploreBusinesse
           <div className="absolute inset-0 rounded-full bg-lime-500/20 blur-xl animate-pulse pointer-events-none" />
 
           <a
-            href={createWhatsAppUrl("¡Hola METELE APPS! 🔥 Quiero una mini app para mi negocio. ¿Me cuentan cómo empezar?")}
+            href={createWhatsAppUrl("¡Hola! 🔥 Tengo un comercio en Estados Unidos enfocado en la comunidad sudamericana y quiero cotizar una App / Tienda Móvil.")}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full block relative overflow-hidden bg-black border-2 border-[#10E836] rounded-full p-2.5 sm:p-3 btn-pulsing-intense transition-all transform active:scale-95 group shadow-[0_0_25px_rgba(16,232,54,0.6)]"
@@ -158,7 +140,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCatalog, onExploreBusinesse
               <div className="flex-1 flex flex-col items-start leading-tight min-w-0">
                 <div className="flex flex-wrap items-center gap-1.5 w-full">
                   <span className="font-heading font-black text-xs sm:text-sm tracking-wider text-white">
-                    ¡ESCRIBINOS!
+                    ¡WHATSAPP DIRECTO!
                   </span>
                   <span className="font-heading font-black text-sm sm:text-base text-[#FFA500] tracking-wide neon-glow-yellow">
                     {DISPLAY_PHONE_INTL}
@@ -166,7 +148,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCatalog, onExploreBusinesse
                 </div>
                 <div className="flex items-center gap-2 mt-0.5">
                   <span className="text-[10px] sm:text-[11px] text-lime-400 font-bold uppercase tracking-widest font-heading">
-                    AGENCIA DIGITAL • RESPUESTA INMEDIATA
+                    SOLUCIONES USA & LATAM • RESPUESTA AL INSTANTE
                   </span>
                 </div>
               </div>

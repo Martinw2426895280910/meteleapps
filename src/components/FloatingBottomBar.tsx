@@ -21,7 +21,7 @@ export const FloatingBottomBar: React.FC<FloatingBottomBarProps> = ({
         {/* Floating WhatsApp Quick Pill - Bigger, Pulsating & Flashing */}
         <div className="mb-2 flex justify-center sm:justify-end">
           <a
-            href={createWhatsAppUrl("¡Hola METELE APPS! 🔥 Quiero digitalizar mi negocio con una Mini App. ¿Podemos hablar?")}
+            href={createWhatsAppUrl("¡Hola! 🔥 Tengo un comercio en Estados Unidos y quiero consultar por una App / Tienda Móvil (+54 3772 63-6749)")}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto relative overflow-hidden inline-flex items-center justify-center gap-2.5 bg-[#25D366] text-black font-black text-xs sm:text-sm px-4 py-3 rounded-full shadow-[0_0_30px_rgba(37,211,102,0.85)] btn-pulsing-intense border-2 border-black active:scale-95 transition-all group"
